@@ -81,7 +81,7 @@ function showfunc() {
                   <p className="leading-relaxed mb-3">{val.about.substring(0, 100)}...</p>
 
                   <div className="flex items-center flex-wrap " onClick={()=>{alertfunc(val._id)}}>
-                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" href={val.link}>
+                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" >
                       Learn More
                       <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14"></path>
