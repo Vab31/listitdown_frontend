@@ -45,7 +45,7 @@ export default function Displaylist() {
       if (val=[])
       {
       try {
-        const response = await axios.get("http://localhost:3002/list/display");
+        const response = await axios.get("https://listitdown-backend.vercel.app/list/display");
         dispatch(addItem(response.data));
         // setData(response.data); 
         // Move this line after dispatch
@@ -67,7 +67,7 @@ export default function Displaylist() {
 
  const handleDelete = () => {
  console.log('data', _id);
-  axios.delete(`http://localhost:3002/list/remove/${_id}`)
+  axios.delete(`https://listitdown-backend.vercel.app/list/remove/${_id}`)
     .then(res => {
       console.log(res.data); // Log the response from the server
       // Update the state to remove the deleted item

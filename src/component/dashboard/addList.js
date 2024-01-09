@@ -34,7 +34,7 @@ export default function Addlist() {
     console.log(formData);
     // Add logic here to send the data to your backend or perform other actions
     try{
-      const response = await axios.post("http://localhost:3002/list/add",formData);
+      const response = await axios.post("https://listitdown-backend.vercel.app/list/add",formData);
       console.log('response', response)
      
      } catch(error){

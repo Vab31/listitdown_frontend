@@ -36,7 +36,7 @@ setPassword(e.target.value);
 
 const logincheck= async()=>{
   try{
-    const response = await axios.post("http://localhost:3002/user/login",{email,password})
+    const response = await axios.post("https://listitdown-backend.vercel.app/user/login",{email,password})
     console.log('Response from server:',response.data.token);
     localStorage.setItem('token', response.data.token);
     // window.location.reload();

@@ -32,7 +32,7 @@ if(val.length > 8){
   val=val.slice(0,8);
 }
 async function   alertfunc  (props) {
-  window.alert(props);
+  // window.alert(props);
   await dispatch(addItem(props));
   navigate('/detail');
   }
@@ -80,7 +80,7 @@ function showfunc() {
                   </div>
                   <p className="leading-relaxed mb-3">{val.about.substring(0, 100)}...</p>
 
-                  <div className="flex items-center flex-wrap ">
+                  <div className="flex items-center flex-wrap " onClick={()=>{alertfunc(val._id)}}>
                     <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" href={val.link}>
                       Learn More
                       <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">

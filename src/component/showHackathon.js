@@ -147,7 +147,7 @@ console.log("inside else")
       
   
       try{
-        const response = await axios.get("http://localhost:3002/list/display")
+        const response = await axios.get("https://listitdown-backend.vercel.app/list/display")
         console.log('Response from server:',response.data);
         setValue(response.data);
         dispatch(addItem(response.data));
@@ -163,7 +163,7 @@ console.log("inside else")
     }, [])
 
     async function   alertfunc  (props) {
-        window.alert(props);
+        // window.alert(props);
         await dispatch(addItem(props));
         navigate('/detail');
         }
@@ -211,7 +211,7 @@ console.log("inside else")
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a> */}
-                    <div onClick={()=>{alertfunc(val._id)}}> Learn More </div>
+                    <div onClick={()=>{alertfunc(val._id)}} className='text-sky-600'> Learn More </div>
                     <span className="text-black font-bold mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 bg-green-500 p-1 pl-2 pr-2 rounded-full border-gray-200">
                       {val.mode} | {val.prize ? val.prize : "No Prize"}
                     </span>
