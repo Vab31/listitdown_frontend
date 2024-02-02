@@ -10,6 +10,7 @@ import Login from './component/admin/login';
 import Homedashboard from './component/dashboard/homedashboard';
 import Displaylist from './component/dashboard/displaylist'
 import Addlist from './component/dashboard/addList';
+import Studymaterial from './component/studymaterial';
 
 import './font/style.css'
 
@@ -24,8 +25,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/detail/:_id" element={<Detail/>} />
           <Route path="/showhackathon" element={<ShowHackathon />} />
+          <Route path="/studymaterial" element={<Studymaterial />} />
+
           <Route path="/adminlogin" element={<Login />} />
           {isLoggedIn ? (
             <>

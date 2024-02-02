@@ -1,17 +1,54 @@
-import React, { useEffect, useState } from 'react'
-import Hero from './hero'
-import {useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import Hero from './hero';
+import axios from 'axios';
 
-export default function Detail() {
-    const[da,setDa]=useState([{
+
+export default function Detail({ match }) {
+    // const[da,setDa]=useState([{
           
-    }]);
-    let id= useSelector((state) => state.id.idno);
-    let val= useSelector((state)=>state.data.items)
-    useEffect(() => {
-        setDa(val.filter(item =>item._id==id));
-        console.log(da[0]);
-    }, [])
+    // }]);
+    // let id= useSelector((state) => state.id.idno);
+    // console.log('id ',id);
+    // let val= useSelector((state)=>state.data.items)
+    // console.log('val',val);
+    // useEffect(() => {
+    //     setDa(val.filter(item =>item._id==id));
+    //     console.log(da[0]);
+    // }, [])
+
+    // const cardId = match.params._id;
+    // console.log('cardId',cardId);
+    // useEffect( async() => {
+    //     const cardId = match.params._id;
+    //     console.log('cardId',cardId);
+    //     try {
+    //         // const response = await axios.get(`https://listitdown-backend.vercel.app/list/display/${cardId}`);
+    //         const response = await axios.get(`http://localhost:3002/list/display/${cardId}`);
+    //         // dispatch(addItem(response.data));
+    //         setDa(response.data);
+    //         // Move this line after dispatch
+    //         console.log('data', da);
+    //       } catch (error) {
+    //         console.error('Error sending data:', error);
+    //       }
+    //   }, [match.params._id]);
+    const [da, setDa] = useState([{}]);
+  const { _id } = useParams(); // Using useParams hook to get parameters from the URL
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3002/list/display/${_id}`);
+        setDa(response.data);
+        console.log('data', da);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData(); // Call the fetchData function
+  }, [_id]); 
     
   
     return (
@@ -43,10 +80,10 @@ export default function Detail() {
                             <span className="text-gray-700 font-bold">Last Date</span>
                             <span className="ml-auto text-gray-900 bg-green-500 p-1 rounded-full font-bold"> {da[0].ldate ? da[0].ldate :"" }</span>
                         </div>
-                        <div className="flex">
+                        <div className="flex " >
                             <span className="title-font font-semibold text-xl text-gray-900"> {da[0].label ? da[0].label :"" } </span>
-                            <a href={da[0].link}>
-                            <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+                            <a href={da[0].link} className='ml-auto'>
+                            <button className=" ml-auto flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Register</button>
                             </a>
                         </div>
                     </div>

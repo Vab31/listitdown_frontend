@@ -11,9 +11,11 @@ const hackathonidSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
+     console.log("inside reducer")
       console.log(action.payload)
-      console.log('items',state.idno);
       state.idno=action.payload;
+      console.log('id inside',state.idno);
+
     },
 //     removeItem: (state, action) => {
 //       state.items = state.idno.filter((item) => item.id !== action.payload.idno);

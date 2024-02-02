@@ -1,7 +1,20 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {useDispatch,useSelector } from 'react-redux';
+import { addItem } from '../slice/hackathonidSlice';
+import {Link} from 'react-router-dom';
 
 export default function Important({val}) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  async function   alertfunc  (props) {
+    // window.alert(props);
+    await dispatch(addItem(props));
+    navigate('/detail');
+    }
+
+
 return (
     <div>
 
@@ -31,14 +44,10 @@ return (
                   </div>
                   <p className="leading-relaxed mb-3">{val.about.substring(0, 100)}...</p>
 
-                  <div className="flex items-center flex-wrap ">
-                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" href={val.link}>
-                      Learn More
-                      <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14"></path>
-                        <path d="M12 5l7 7-7 7"></path>
-                      </svg>
-                    </a>
+                  <div className="flex items-center flex-wrap hover:cursor-pointer ">
+                  <Link to={`/detail/${val._id}`}>
+                    <div  className='text-sky-600 hover:cursor-pointer'> Learn More </div>
+                   </Link>
                     <span className="text-black font-bold mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 bg-green-500 p-1 pl-2 pr-2 rounded-full border-gray-200">
                       {val.mode} | {val.prize ? val.prize : "No Prize"}
                     </span>

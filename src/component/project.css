@@ -1,0 +1,100 @@
+.project__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    width: 95%;
+    margin-left: 2.5%;
+  }
+  
+  .project__item {
+    background: #4db5ff;
+    padding: 0.3rem;
+    border-radius: 2rem;
+    
+    border: 1px solid transparent;
+    transition: all 400ms ease;
+  }
+  
+  .project__item:hover {
+    border-color: rgba(77, 181, 255, 0.4);
+    /* background: transparent; */
+    transform: perspective(500px) translateZ(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  }
+  
+  .project__item-image {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    
+    width: auto;
+    object-fit: fill;
+  }
+  
+  .project__item h3 {
+    margin: 1rem 0 1rem;
+    text-align: center;
+    color: 2c2c6c;
+  }
+  
+  .project__item-cta {
+    display: flex;
+    justify-content: center;
+    /* gap: 1rem; */
+    /* margin-bottom: 1rem; */
+  }
+  
+  .btn {
+    text-decoration: none;
+    width: max-content;
+    display: inline-block;
+    color: #1f1f38;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid #1f1f38;
+    transition: all 400ms ease;
+  }
+  
+  .btn:hover {
+    background: #fff;
+    color: black;
+    border-color: transparent;
+  }
+  
+  .btn-primary {
+    background: #1f1f38;
+    color: #fff;
+  }
+  
+  #img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  /* =============== MEDIA QUARIES (MEDIUM DEVICES) =================*/
+  @media screen and (max-width: 1024px) {
+    .project__container {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+   
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    /* Your styles for large screens go here */
+    #resource{
+      margin-top: 80px;
+    }
+  
+    /* Add more styles as needed */
+  }
+  
+  /* =============== MEDIA QUARIES (SMALL DEVICES) =================*/
+  @media screen and (max-width: 600px) {
+    .project__container {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  

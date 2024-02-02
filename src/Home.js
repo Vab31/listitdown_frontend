@@ -15,7 +15,7 @@ export default function Home() {
     try {
       const response = await axios.get("https://listitdown-backend.vercel.app/list/display");
       dispatch(addItem(response.data));
-      setData(response.data); 
+      setData(response.data);
       // Move this line after dispatch
       console.log('data', data);
     } catch (error) {
@@ -35,14 +35,14 @@ export default function Home() {
   //   // window.location.reload();
   //   console.log('data', data); // Use 'val' directly
   // }, [val]);
-  
+
 
   return (
     <div>
-    {/* <p>{val[0].title}</p> */}
+      {/* <p>{val[0].title}</p> */}
       <Hero />
-       <Important val={val} />
-     <UpcomingHackathon val={val} />
+      <Important val={val} />
+      <UpcomingHackathon val={val} />
     </div>
   );
 }

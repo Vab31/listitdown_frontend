@@ -12,8 +12,8 @@ AOS.init({
 });
 
 const Hero = () => {
-  const [toggleText, setToggleText] = useState("Think!");
-  const [toggleText1, setToggleText1] = useState("Create");
+  const [toggleText, setToggleText] = useState("Deserve");
+  const [toggleText1, setToggleText1] = useState("Bring!");
   const colors = ["red", "blue", "orange"];
 
   // Function to change the button's background color
@@ -60,7 +60,7 @@ const Hero = () => {
        
 Our Expertise!
 <br/>
-<p style={{ fontFamily: 'Instagram Sans Bold' ,fontSize:'30px'}} >Get Your Ebook! </p>
+<p style={{ fontFamily: 'Instagram Sans Bold' ,fontSize:'30px'}} className="text-slate-900">Get Your Ebook! </p>
            
            
             <button className="learn-more-btn" style={{width:'100px',fontSize:'20px' }}><a href='#sell'>Get</a></button>

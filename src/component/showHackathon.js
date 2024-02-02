@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {useSelector,useDispatch} from 'react-redux';
 import { addItem } from '../slice/hackathonidSlice';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 
  function ShowHackathon() {
@@ -211,7 +212,10 @@ console.log("inside else")
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a> */}
-                    <div onClick={()=>{alertfunc(val._id)}} className='text-sky-600'> Learn More </div>
+                      <Link to={`/detail/${val._id}`}>
+                    <div  className='text-sky-600 hover:cursor-pointer'> Learn More </div>
+                    {/* <div onClick={()=>{alertfunc(val._id)}} className='text-sky-600 hover:cursor-pointer'> Learn More </div> */}
+                    </Link>
                     <span className="text-black font-bold mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 bg-green-500 p-1 pl-2 pr-2 rounded-full border-gray-200">
                       {val.mode} | {val.prize ? val.prize : "No Prize"}
                     </span>
@@ -225,7 +229,9 @@ console.log("inside else")
       })}
     </div>
   </div>
+
       <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={showfunc}>See More</button>
+   
     </div>
   </section>
   )
