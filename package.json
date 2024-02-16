@@ -2,8 +2,8 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://listitdown-backend.vercel.app",
-
+  "proxy": "https://listitdown-backend.vercel.app/", 
+  
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -14,7 +14,10 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "axios": "^1.6.2",
+    "flowbite": "^2.2.1",
+    "flowbite-react": "^0.7.2",
     "react": "^18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-redux": "^8.1.3",

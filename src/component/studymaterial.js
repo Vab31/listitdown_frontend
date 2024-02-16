@@ -122,15 +122,17 @@ function Studymaterial() {
               return (
                 <article
                   key={id}
-                  className="project__item md:h-96"
+                  className="project__item md:h-96 w-80 h-40 shadow-2xl"
                   
-
+                  style={{ backgroundImage: `url(${image})`, backgroundPosition: "center", backgroundSize: "cover", backdropFilter: "blur(8px)", // Adjust the blur amount as needed
+                  backgroundColor: "rgba(255, 255, 255, 0.5)", // Adjust the opacity value (0.5 for 50% opacity)
+                  backdropOpacity: "0.5"  }}
                 >
-                  <div className="project__item-image md:h-60 ">
-                    <img id="img" src={image} alt={title} />
+                  <div className="project__item-image md:h-60 h-20  " >
+                    {/* <img id="img" src={image} alt={title} /> */}
                   </div>
-                  <h3 style={{ fontFamily: 'Instagram Sans Bold' }} className="text-red-600 text-2xl">{title}</h3>
-                  <div className="project__item-cta">
+                  {/* <h3 style={{ fontFamily: 'Instagram Sans Bold' }} className="text-red-600 text-2xl">{title}</h3> */}
+                  <div className="mt-">
                   { github?
                     <a
                       href={github}
@@ -139,7 +141,7 @@ function Studymaterial() {
                       rel="noreferrer"
                       style={{ fontFamily: 'Instagram Sans Regular' }}
                     >
-                      Get
+                     {title}
                     </a>:
                     <a
                       onClick={()=>window.alert('We will add it soon!')}

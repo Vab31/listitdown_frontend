@@ -15,9 +15,10 @@ export default function Navigation() {
       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/' >Home</a>
       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/showhackathon'>Hackathon</a>
       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href=''>Imp Hackathon </a>
-      <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href=''>Study Material</a>
+      <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/studymaterial'>Study Material</a>
+      <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/codelist'>Code Library</a>
     </nav>
-    <button className="inline-flex items-center bg-sky-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded font-semibold mt-4 md:mt-0">Contact Us
+    <button className="inline-flex items-center bg-sky-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded-md font-semibold mt-4 md:mt-0">Contact Us
       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg>

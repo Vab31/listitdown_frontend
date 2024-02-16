@@ -3,6 +3,8 @@ import "./hero.css";
 import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
+// import { useState } from 'react';
+import axios from 'axios';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -16,36 +18,50 @@ const Hero = () => {
   const [toggleText1, setToggleText1] = useState("Bring!");
   const colors = ["red", "blue", "orange"];
 
-  // Function to change the button's background color
   function changeBackgroundColor() {
     const button = document.querySelector(".learn-more-btn");
     const currentColor = button.style.backgroundColor;
     const currentIndex = colors.indexOf(currentColor);
     
-    // Calculate the next color index
     const nextIndex = (currentIndex + 1) % colors.length;
   
-    // Apply the new background color
     button.style.backgroundColor = colors[nextIndex];
   }
+
+const [email, setEmail] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    console.log("Submitted email:", email);
+    setEmail("");
+  let val={
+    "email":email,
+  }
+    console.log(val);
+    // Add logic here to send the data to your backend or perform other actions
+    try{
+      const response = await axios.post("https://listitdown-backend.vercel.app/email/add",val);
+      window.alert("Your email is successfully submitted");
+      console.log('response', response)
+     
+     } catch(error){
+        console.error('Error sending data:', error);
+      }
+
+
+  };
+
+  // const handleSubmit = async() => {
+    // Use formData object for further processing or submission
+    
   
-  // Set an interval to change the background color every 1500 milliseconds
-  
-
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setToggleText((prevText) => (prevText === "Think!" ? "Create!" : "Think!"));
-  //     setToggleText1((prevText) => (prevText === "Filter" ? "List" : "Filter"));
-  //   }, 1500); // Toggle every 1 second
-
-// const interval=  setInterval(changeBackgroundColor, 1000);
-
-
-//     return () => clearInterval(intervalId,interval);
-//   }, []);
+  // }
 
   return (
     <div className="body-container bg-slate-200">
+ 
       <div className="left-content">
         <h1 className="mainhead" style={{ fontFamily: 'Instagram Sans Bold' }}>
           We <span className="sty">{toggleText1}</span> <br />
@@ -60,10 +76,70 @@ const Hero = () => {
        
 Our Expertise!
 <br/>
-<p style={{ fontFamily: 'Instagram Sans Bold' ,fontSize:'30px'}} className="text-slate-900">Get Your Ebook! </p>
+<p style={{ fontFamily: 'Instagram Sans Bold' ,fontSize:'30px'}} className="text-slate-900 my-4">Register to Get<br/> Hackathon Notification<br/> on your  Email! </p>
            
            
-            <button className="learn-more-btn" style={{width:'100px',fontSize:'20px' }}><a href='#sell'>Get</a></button>
+            {/* <button  style={{fontSize:'20px' }} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Register</button> */}
+         <div className="">
+      {/* Button to open modal */}
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Open Modal
+      </button>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+          <div className="relative w-auto max-w-sm mx-auto my-6">
+            <div className="bg-white rounded-lg shadow-lg">
+              <div className="flex flex-col p-4">
+                {/* Modal header */}
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-semibold">Register Your Email</h3>
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="text-gray-500 hover:text-gray-700 focus:outline-none"
+                  >
+                    <svg
+                      className="w-6 h-6 fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M17.293 2.293a1 1 0 0 1 1.414 1.414l-14 14a1 1 0 1 1-1.414-1.414l14-14zM2.707 2.293a1 1 0 0 1 0 1.414L16.707 18.707a1 1 0 1 1-1.414 1.414L1.293 3.707a1 1 0 0 1 1.414-1.414z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                {/* Email input form */}
+                <form onSubmit={handleSubmit}>
+                  <label className="block mb-2">
+                    Email:
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="block w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500"
+                      required
+                    />
+                  </label>
+                  <button
+                    type="submit"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 focus:outline-none focus:shadow-outline"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+        
           </p>
         </div>
 

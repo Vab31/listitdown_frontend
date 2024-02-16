@@ -11,6 +11,11 @@ import Homedashboard from './component/dashboard/homedashboard';
 import Displaylist from './component/dashboard/displaylist'
 import Addlist from './component/dashboard/addList';
 import Studymaterial from './component/studymaterial';
+import Sendmessage from './component/dashboard/sendmessage';
+import Codelist from './component/code/codelist';
+import Codepage from './component/code/codepage';
+import Addcode from './component/code/addcode';
+// import 'flowbite/css/flowbite.min.css';
 
 import './font/style.css'
 
@@ -26,8 +31,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/detail/:_id" element={<Detail/>} />
+          <Route path="/code/:_id" element={<Codepage/>} />
           <Route path="/showhackathon" element={<ShowHackathon />} />
           <Route path="/studymaterial" element={<Studymaterial />} />
+          <Route path='/sendmessage' element={<Sendmessage/>}/>
+          <Route path='/codelist' element={<Codelist/>}/>
+          {/* <Route path='/codepage' element={<Codepage/>}/> */}
+         
+
+
 
           <Route path="/adminlogin" element={<Login />} />
           {isLoggedIn ? (
@@ -35,6 +47,7 @@ function App() {
               <Route path="/dashboardhome" element={<Homedashboard />} />
               <Route path="/list" element={<Displaylist />} />
               <Route path="/additem" element={<Addlist />} />
+              <Route path='/addcode' element={<Addcode/>}/>
             </>
           ) : (
             <>

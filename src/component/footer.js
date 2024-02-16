@@ -29,9 +29,9 @@ function Footer() {
         <li>
           <a href="#resource">Resource</a>
         </li>
-        <li>
+        {/* <li>
           <a href="#sell">Ebook and Courses</a>
-        </li>
+        </li> */}
         <li>
           <a href="#feedBackContainer">FeedBack</a>
         </li>
@@ -52,7 +52,7 @@ function Footer() {
         </a>
       </div>
       <div className="footer__copyright">
-        <small>&copy; RcCodex. All rights reserved.</small>
+        <small>&copy; Listitdown. All rights reserved.</small>
       </div>
     </footer>
   );

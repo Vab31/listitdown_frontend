@@ -45,7 +45,7 @@ export default function Displaylist() {
       if (val=[])
       {
       try {
-        const response = await axios.get("https://listitdown-backend.vercel.app/list/display");
+        const response = await axios.get("http://listitdown-backend.vercel.app/list/display");
         dispatch(addItem(response.data));
         // setData(response.data); 
         // Move this line after dispatch
