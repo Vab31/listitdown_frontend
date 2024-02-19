@@ -39,8 +39,11 @@ const logincheck= async()=>{
     const response = await axios.post("https://listitdown-backend.vercel.app/user/login",{email,password})
     console.log('Response from server:',response.data.token);
     localStorage.setItem('token', response.data.token);
-    // window.location.reload();
-    navigate("/dashboardhome")}
+    navigate("/dashboardhome")
+    window.location.reload()
+  
+  }
+   
     catch(error){
       console.error('Error sending data:', error);
     }

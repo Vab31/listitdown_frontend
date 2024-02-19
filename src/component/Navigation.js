@@ -6,10 +6,11 @@ export default function Navigation() {
         <header className="text-slate-900 font-semibold bg-slate-400 body-font">
   <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href='/'>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+      {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
-      <span className="ml-3 text-xl hover:cursor-pointer" >ListItDown</span>
+      </svg> */}
+      <img src='https://see.fontimg.com/api/renderfont4/OVoWO/eyJyIjoiZnMiLCJoIjoyOSwidyI6MTAwMCwiZnMiOjI5LCJmZ2MiOiIjNEU1OUI5IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/TGlzdGl0ZG93bg/aloevera.png' alt='listitdown'/>
+      {/* <span className="ml-3 text-xl hover:cursor-pointer" >ListItDown</span> */}
     </a>
     <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/' >Home</a>

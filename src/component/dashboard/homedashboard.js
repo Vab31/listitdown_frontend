@@ -62,6 +62,40 @@ export default function Homedashboard() {
       
       
     </div>
+    <div className="flex flex-wrap -m-4 text-center">
+    
+      <div className="p-4 md:w-1/2  sm:w-1/2 w-full">
+      <a href="/addcode">
+        <div className="border-4 border-gray-950 hover:cursor-pointer px-4 py-6 bg-gray-400 rounded-lg">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" className="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+
+
+</defs>
+
+<title>Icon_24px_DataLossPrevention_Color</title>
+
+<g data-name="Product Icons">
+
+<path class="cls-1" d="M14.86,5.44A5.48,5.48,0,0,0,7.8,6.5a5.31,5.31,0,0,0-1.34,3.6,5.49,5.49,0,0,0,2.41,4.53l-.17.28-.56.16c-.89,1.56-1.22,2-2.06,3.48l1.48.85c.85-1.5,1.17-1.94,2.05-3.48l-.16-.61.14-.26a5.49,5.49,0,0,0,5.27-9.61Zm-1.92,8.3A3.79,3.79,0,1,1,15.6,9.09h0A3.8,3.8,0,0,1,12.94,13.74Z"/>
+
+
+</g>
+
+</svg>
+
+         <h2 className="title-font font-medium text-3xl text-gray-900">2.7K</h2>
+          <p className="leading-relaxed font-bold text-white">add code</p>
+        </div>
+        </a>
+      </div>
+      
+   
+      
+      
+    </div>
   </div>
 </section>
     </div>

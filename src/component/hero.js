@@ -86,7 +86,7 @@ Our Expertise!
         onClick={() => setIsModalOpen(true)}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       >
-        Open Modal
+        Get Notification
       </button>
 
       {/* Modal */}
@@ -151,18 +151,18 @@ Our Expertise!
           <h2 className="text-5xl ">Our History</h2>
           <div className="about__cards m-4">
             <article className="about__card " id="one" data-aos="fade-up">
-              <FaAward className="about__icon" />
+              <FaAward className="about__icon mx-auto" />
               <h5>Community</h5>
               <small>100K Members</small>
             </article>
             <article className="about__card" id="two" data-aos="fade-down">
-              <FiUsers className="about__icon" />
+              <FiUsers className="about__icon mx-auto" />
               <h5>Listed Hackathon</h5>
               <small>200+</small>
             </article>
 
             <article className="about__card " id="three" data-aos="fade-up">
-              <VscFolderLibrary className="about__icon" />
+              <VscFolderLibrary className="about__icon mx-auto " />
               <h5>Projects</h5>
 
               <small>100+ Completed</small>

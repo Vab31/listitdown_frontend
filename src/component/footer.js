@@ -21,23 +21,23 @@ function Footer() {
      
       <ul className="permalinks" style={{ fontFamily: 'Instagram Sans Regular' }}>
         <li>
-          <a href="/">Home</a>
+          <a href="/">Hackathon</a>
         </li>
+        {/* <li>
+          <a href="#learn"></a>
+        </li> */}
         <li>
-          <a href="#learn">Learn</a>
-        </li>
-        <li>
-          <a href="#resource">Resource</a>
+          <a href="/studymaterial">Study Material</a>
         </li>
         {/* <li>
           <a href="#sell">Ebook and Courses</a>
         </li> */}
         <li>
-          <a href="#feedBackContainer">FeedBack</a>
+          <a href="/codelist">Code Library</a>
         </li>
-        <li>
+        {/* <li>
           <a href="#talktous">Talk to us</a>
-        </li>
+        </li> */}
        
       </ul>
       <div className="footer__socials">
@@ -52,7 +52,7 @@ function Footer() {
         </a>
       </div>
       <div className="footer__copyright">
-        <small>&copy; Listitdown. All rights reserved.</small>
+        <small>&copy; Listitdown powered by Rccodex  All rights reserved.</small>
       </div>
     </footer>
   );
