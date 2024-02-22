@@ -39,7 +39,7 @@ export default function Detail({ match }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3002/list/display/${_id}`);
+        const response = await axios.get(`https://listitdown-backend.vercel.app/list/display/${_id}`);
         setDa(response.data);
         console.log('data', da);
       } catch (error) {
