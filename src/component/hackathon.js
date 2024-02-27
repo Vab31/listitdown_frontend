@@ -67,7 +67,7 @@ function showfunc() {
           <div className="p-6">
             {/* <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2> */}
             <div class="border-t-4 w-10 rounded mx-auto border-gray-400 my-2"></div>
-            <h1 className="title-font text-lg font-bold text-gray-900 mb-3">The Catalyzer</h1>
+            <h1 className="title-font text-lg font-bold text-gray-900 mb-3">{val.title}</h1>
             <div className="pl-2 pr-2 font-bold text-black rounded-full" style={{ fontFamily: "Instagram Sans Bold" }}>
                     <span className="bg-blue-400 p-1 md:pl-2 md:pr-2 rounded-full text-sm">Last Date : {val.ldate}</span>
                   </div>

@@ -13,7 +13,7 @@ import IMG2 from "./database.jpg";
 import IMG3 from "./oop.jpg";
 import IMG4 from "./git.webp";
 import IMG5 from "./html.png"
-
+import adimg from '../image/courseimg.png'
 // import img2 from "../img/pp3.jpg"
 // import img3 from "../img/Project-Management-Post.jpg"
 // import AOS from "aos";
@@ -107,9 +107,13 @@ function Studymaterial() {
   };
 
   return (
-    <div style={serviceContainerStyle} id="resource" className="mt-10">
-      <div >
-        <h1 style={{ fontFamily: 'Instagram Sans Bold'}} className="md:text-5xl text-2xl md:m-5"  >Resourses To help You Out :)</h1>
+    <div style={serviceContainerStyle} id="resource" className="">
+       
+      <div className=" mx-10"  >
+      <a href='https://ebook.rccodex.co.in/'>
+            <img className='rounded shadow-2xl mb-10 shadow-black' src={adimg}/></a>
+
+        <h1 style={{ fontFamily: 'Instagram Sans Bold'}} className="md:text-5xl text-2xl md:my-5"  >Resourses To help You Out :)</h1>
       </div>
       <div style={hrStyle}>
         <hr />

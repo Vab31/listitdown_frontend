@@ -88,7 +88,14 @@ Our Expertise!
       >
         Get Notification
       </button>
-
+      < a href="https://ebook.rccodex.co.in/">
+      <button 
+        
+        className="bg-red-500 hover:bg-red-700 mx-4  md:my-0 my-4 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Get MERN Ebook
+      </button>
+</a>
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
@@ -132,6 +139,7 @@ Our Expertise!
                   >
                     Submit
                   </button>
+                  
                 </form>
               </div>
             </div>

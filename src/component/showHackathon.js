@@ -88,7 +88,7 @@ console.log("inside else")
           </div>
           <div className="p-6">
             <div class="border-t-4 w-10 rounded mx-auto border-gray-400 my-2"></div>
-            <h1 className="title-font text-lg font-bold text-gray-900 mb-3">The Catalyzer</h1>
+            <h1 className="title-font text-lg font-bold text-gray-900 mb-3">{val.title}</h1>
             <div className="font-bold text-black rounded-full" style={{ fontFamily: "Instagram Sans Bold" }}>
                     <span className="bg-blue-400 p-1 pl-2 pr-2 text-sm  rounded-full">Last Date : {val.ldate}</span>
                   </div>

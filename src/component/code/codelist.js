@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 // import { addItem } from '../slice/hackathonidSlice';
 import axios from 'axios';
+import adimg from '../../image/courseimg.png'
 import {Link} from 'react-router-dom';
 
 export default function Codelist() {
@@ -39,9 +40,11 @@ export default function Codelist() {
   return (
     <div>
         <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col text-center w-full mb-20">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Project Code Library</h1>
+  <div class="container px-5 py-16 mx-auto">
+    <div class="flex flex-col text-center w-full mb-10">
+      <a href='https://ebook.rccodex.co.in/'>
+      <img className='rounded shadow-2xl shadow-black' src={adimg}/></a>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 mt-8 text-gray-900">Project Code Library</h1>
       <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
 
         
