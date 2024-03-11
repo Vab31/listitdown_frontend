@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 // import Hero from './hero';
 import axios from 'axios';
 import adimg from '../../image/courseimg.png'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
 export default function Codepage() {
@@ -61,6 +63,106 @@ export default function Codepage() {
     copy(da.js);
     alert(`You have copied..`);
 };
+const customStyle = {
+  overflowX: 'auto',  // Enable horizontal scrolling if needed
+  whiteSpace: 'pre-wrap', // Allow wrapping within the code block
+  wordWrap: 'break-word' // Break long words if needed
+};
+const htmlCode = `
+<html>
+  <head>
+      <style>
+          div{
+              background-color: yellow;
+          }
+          h1{
+              background-color: #FF0000;
+          }
+          p{
+              background-color: orange;
+          }
+          span{
+              background-color: purple;
+          }
+      </style>
+  </head>
+  <body>
+      <div>
+          <h1>CodeWithHarry</h1>
+          <p>Developer and founder of <span>CodeWithHarry.com</span></p>
+      </div>
+      <div>
+          <h1>CodeWithHarry</h1>
+          <p>Developer and founder of <span>CodeWithHarry.com</span></p>
+      </div>
+      <div>
+          <h1>CodeWithHarry</h1>
+          <p>Developer and founder of <span>CodeWithHarry.com</span></p>
+      </div>
+      <div>
+          <h1>CodeWithHarry</h1>
+          <p>Developer and founder of <span>CodeWithHarry.com</span></p>
+      </div>
+      <div>
+          <h1>CodeWithHarry</h1>
+          <p>Developer and founder of <span>CodeWithHarry.com</span></p>
+      </div>
+      <div>
+          <h1>CodeWithHarry</h1>
+          <p>Developer and founder of <span>CodeWithHarry.com</span></p>
+      </div>
+      <div>
+          <h1>CodeWithHarry</h1>
+          <p>Developer and founder of <span>CodeWithHarry.com</span></p>
+      </div>
+      <div>
+          <h1>CodeWithHarry</h1>
+          <p>Developer and founder of <span>CodeWithHarry.com</span></p>
+      </div>
+      <div>
+          <h1>CodeWithHarry</h1>
+          <p>Developer and founder of <span>CodeWithHarry.com</span></p>
+      </div>
+      <div>
+          <h1>CodeWithHarry</h1>
+          <p>Developer and founder of <span>CodeWithHarry.com</span></p>
+      </div>
+      <div>
+          <h1>CodeWithHarry</h1>
+          <p>Developer and founder of <span>CodeWithHarry.com</span></p>
+      </div>
+  </body>
+  </html>
+  `;
+  const cssCode = `
+    div {
+        background-color: yellow;
+    }
+    h1 {
+        background-color: #FF0000;
+    }
+    p {
+        background-color: orange;
+    }
+    span {
+        background-color: purple;
+    }
+    span {
+        background-color: purple;
+    }
+    span {
+        background-color: purple;
+    }
+    span {
+        background-color: purple;
+    }
+    span {
+        background-color: purple;
+    }
+    span {
+        background-color: purple;
+    }
+  `;
   return (
     <div>
 
@@ -88,33 +190,51 @@ export default function Codepage() {
           
         </div>
       </div> */}
-      <div className="p-4 lg:w-1/3 w-screen">
-      <div className="h-full bg-black bg-opacity-75 px-8 text-red-500 pt-10 pb-24 rounded-lg overflow-hidden text-center relative">
-          <h1 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">HTML</h1>
-          <button onClick={copyToClipboard} className='bg-blue-400 px-3 my-4 text-white rounded-md font-medium items-center'>Copy</button><br/>
+      <div className="p-4 w-screen md:mx-24 ml-auto mr-auto bg-black my-5 rounded">
+      <h1 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">HTML
+      </h1>
+          <button onClick={copyToClipboard} className='bg-blue-400 px-3 my-4 text-white rounded-md font-medium items-center '>Copy</button><br/>
 
-           <code>{da.html}</code>
-          
-        </div>
-      </div>
-      <div className="p-4 lg:w-1/3 w-screen">
-      <div className="h-full bg-black bg-opacity-75 px-8 text-red-500 pt-10 pb-24 rounded-lg overflow-hidden text-center relative">
-          <h1 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CSS</h1>
-          <button onClick={copyToClipboardcss} className='bg-blue-400 px-3 my-4 text-white rounded-md font-medium items-center'>Copy</button><br/>
+          <pre style={{ display: 'block', height: '500px' }}>
+          <SyntaxHighlighter language="css" style={atomDark} customStyle={{ height: '100%', overflowY: 'scroll' }}>
+                {/* {`/ da.css} */}
+            {da.html}
+                
+           </SyntaxHighlighter> 
 
-           <code>{da.css}</code>
-          
-        </div>
-      </div>
-      <div className="p-4 lg:w-1/3 w-screen">
-      <div className="h-full bg-black bg-opacity-75 px-8 text-red-500 pt-10 pb-24 rounded-lg overflow-hidden text-center relative">
-          <h1 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Javascript</h1>
-          <button onClick={copyToClipboardjs} className='bg-blue-400 px-3 my-4 text-white rounded-md font-medium items-center'>Copy</button><br/>
 
-           <code>{da.js}</code>
-          
-        </div>
+        </pre>
       </div>
+      <div className="p-4 w-screen md:mx-24 ml-auto mr-auto bg-black my-5 rounded">
+      <h1 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CSS
+      </h1>
+          <button onClick={copyToClipboardcss} className='bg-blue-400 px-3 my-4 text-white rounded-md font-medium items-center '>Copy</button><br/>
+          <pre style={{ display: 'block', height: '500px' }}>
+          <SyntaxHighlighter language="css" style={atomDark} customStyle={{ height: '100%', overflowY: 'scroll' }}>
+                {/* {`/ da.css} */}
+            {da.css}
+                
+           </SyntaxHighlighter> 
+
+
+        </pre>
+      </div>
+      <div className="p-4 w-screen md:mx-24 ml-auto mr-auto bg-black my-5 rounded">
+      <h1 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">Javascript
+      </h1>
+          <button onClick={copyToClipboardjs} className='bg-blue-400 px-3 my-4 text-white rounded-md font-medium items-center '>Copy</button><br/>
+
+          <pre style={{ display: 'block', height: '500px' }}>
+          <SyntaxHighlighter language="css" style={atomDark} customStyle={{ height: '100%', overflowY: 'scroll' }}>
+                {/* {`/ da.css} */}
+            {da.js}
+                
+           </SyntaxHighlighter> 
+
+
+        </pre>
+      </div>
+      
 
       <div className='w-screen h-20 mx-4 rounded-md text-red-500 bg-black items-end py-4'>
 {da.link}

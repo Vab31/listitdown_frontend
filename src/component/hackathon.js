@@ -6,6 +6,7 @@ import {useDispatch,useSelector } from 'react-redux';
 import { addItem } from '../slice/hackathonidSlice';
 import {Link} from 'react-router-dom';
 import crdbg from './crdbg.png'
+import loder from './loder.gif'
 
 
 
@@ -24,15 +25,23 @@ import crdbg from './crdbg.png'
   //   important:"false",
   //   ldate:"12-12-2023",
   //       },
-  const [data, setData] = useState([]);
-const [filtervalue, setFiltervalue] = useState(val);
+
 const navigate = useNavigate();
 const dispatch = useDispatch();
 console.log("propdrill" , val);
+// useEffect(()=>{
+// setTimeout(async() => {
+//   await val;
+//   console.log("ky",val);
+//   setRes(false);
+// }, 1000);
+// },val);
+
 
 
 if(val.length > 8){
   val=val.slice(0,8);
+  
 }
 async function   alertfunc  (props) {
   // window.alert(props);
@@ -54,6 +63,11 @@ function showfunc() {
         <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">Embrace the Unknown: Step outside your comfort zone and explore new possibilities.</p>
       </div>
       <div className="container px-5 py-20 mx-auto">
+      {val.length == 0 ? (
+          <div className="flex  justify-center ">
+            <img src={loder} alt="Loader" />
+          </div>
+        ):(
     <div className="flex flex-wrap -m-4">
       {val.map((val) => (
         
@@ -97,6 +111,7 @@ function showfunc() {
         // If not important, you can choose to return null or an empty fragment
       ))}
     </div>
+        )}
   </div>
       <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={showfunc}>See More</button>
     </div>

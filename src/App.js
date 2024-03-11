@@ -1,5 +1,6 @@
 import './App.css';
-import ReactDOM from "react-dom/client";
+
+// import dotenv from 'dotenv';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from './component/Navigation';
 import Footer from './component/footer';
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <div className="App">
+       <h1>{process.env.id}</h1>
       <Navigation />
       <BrowserRouter>
         <Routes>

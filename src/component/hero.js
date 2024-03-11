@@ -58,10 +58,14 @@ const [email, setEmail] = useState("");
     
   
   // }
+  
+ const myId = process.env.id
+ console.log('myId', myId)
 
   return (
     <div className="body-container bg-slate-200">
- 
+
+   
       <div className="left-content">
         <h1 className="mainhead" style={{ fontFamily: 'Instagram Sans Bold' }}>
           We <span className="sty">{toggleText1}</span> <br />

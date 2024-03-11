@@ -98,31 +98,30 @@ export default function Addcode() {
        style={{"margin":"2px"}}
     />
    
-    <TextField
-label="Html"
+  
+<textarea placeholder="Html"
 id="filled-size-normal"
 name="html"
           value={formData.html}
           onChange={handleInputChange}
-variant="filled"
-// style={{  height: '200px' }}
-style={{"margin":"2px"}}
-/>
+variant="filled" rows="1" cols="15" className='m-2' />
 <br/>
-<TextField
-      label="CSS"
+{/* <TextField
+     
+
+       style={{"margin":"2px"}}
+    /> */}
+    <textarea  placeholder="CSS"
       id="filled-size-normal"
 
  name="css"
           value={formData.css}
           onChange={handleInputChange}
 
-      variant="filled"
-
-       style={{"margin":"2px"}}
-    />
+      variant="filled" rows="1" cols="15" className='m-2' />
+      
    
-<TextField
+{/* <TextField
       label="Js"
       id="filled-size-normal"
       name="js"
@@ -130,7 +129,13 @@ style={{"margin":"2px"}}
           onChange={handleInputChange}
       variant="filled"
        style={{"margin":"2px"}}
-    />
+    /> */}
+    <textarea placeholder="Js"
+      id="filled-size-normal"
+      name="js"
+          value={formData.js}
+          onChange={handleInputChange}
+      variant="filled" rows="1" cols="15" className='m-2' />
     <br/>
 <TextField
       label="Link"

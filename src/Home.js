@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <div>
-      {/* <p>{val[0].title}</p> */}
+      
       <Hero />
       <Important val={val} />
       <UpcomingHackathon val={val} />

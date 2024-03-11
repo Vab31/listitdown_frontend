@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import {useDispatch,useSelector } from 'react-redux';
 import { addItem } from '../slice/hackathonidSlice';
 import {Link} from 'react-router-dom';
+import loder from './loder.gif'
 
 export default function Important({val}) {
   const navigate = useNavigate();
@@ -23,6 +24,11 @@ return (
     <h1>Recommended Hackathon</h1>
   </div>
   <div className="container px-5 py-20 mx-auto">
+  {val.length == 0 ? (
+          <div className="flex  justify-center ">
+            <img src={loder} alt="Loader" />
+          </div>
+        ):(
     <div className="flex flex-wrap -m-4 md:-mt-24">
       {val.map((val) => {
         if (val.important === "true") {
@@ -60,6 +66,7 @@ return (
         return null; // If not important, you can choose to return null or an empty fragment
       })}
     </div>
+        )}
   </div>
 </section>
 

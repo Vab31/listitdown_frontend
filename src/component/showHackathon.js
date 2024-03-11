@@ -77,6 +77,11 @@ console.log("inside else")
         <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Upcoming Hackathon</h1>
         <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">Unleash Your Potential: Collaborate, learn, and build something amazing.</p>
       </div>
+      {value.length == 0 ? (
+          <div className="flex  justify-center ">
+            <img src={loder} alt="Loader" />
+          </div>
+        ):(
     <div className="flex flex-wrap -m-4">
     {value ? value.map((val) => (
       <div className="p-2 sm:p-10 md:w-1/3" key={val.id} >
@@ -114,6 +119,7 @@ console.log("inside else")
           )}
      
     </div>
+        )}
   </div>
 </section> 
   )
