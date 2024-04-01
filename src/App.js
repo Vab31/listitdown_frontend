@@ -19,6 +19,7 @@ import Addcode from './component/code/addcode';
 // import 'flowbite/css/flowbite.min.css';
 
 import './font/style.css'
+import Dashsidebar from './component/dashboard/dashboardside';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/studymaterial" element={<Studymaterial />} />
           <Route path='/sendmessage' element={<Sendmessage/>}/>
           <Route path='/codelist' element={<Codelist/>}/>
+          {/* <Route path='/side' element={<Dashsidebar/>}/> */}
           {/* <Route path='/codepage' element={<Codepage/>}/> */}
          
 
@@ -46,7 +48,7 @@ function App() {
           <Route path="/adminlogin" element={<Login />} />
           {isLoggedIn ? (
             <>
-              <Route path="/dashboardhome" element={<Homedashboard />} />
+              <Route path="/dashboardhome" element={<Dashsidebar/>} />
               <Route path="/list" element={<Displaylist />} />
               <Route path="/additem" element={<Addlist />} />
               <Route path='/addcode' element={<Addcode/>}/>

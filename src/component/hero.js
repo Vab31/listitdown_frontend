@@ -7,7 +7,9 @@ import { VscFolderLibrary } from "react-icons/vsc";
 import axios from 'axios';
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import 'intro.js/introjs.css';
+import introJs from 'intro.js';
+import output from'./homev.mp3'
 
 AOS.init({
   duration: 1000,
@@ -17,6 +19,8 @@ const Hero = () => {
   const [toggleText, setToggleText] = useState("Deserve");
   const [toggleText1, setToggleText1] = useState("Bring!");
   const colors = ["red", "blue", "orange"];
+  const [introInstance, setIntroInstance] = useState(null);
+
 
   function changeBackgroundColor() {
     const button = document.querySelector(".learn-more-btn");
@@ -61,6 +65,35 @@ const [email, setEmail] = useState("");
   
  const myId = process.env.id
  console.log('myId', myId)
+
+
+ useEffect(() => {
+  const intro = introJs();
+  intro.setOptions({
+    steps: [
+      {
+        element: '.step4',
+        intro: `
+        <div class='step-content'>
+        <div class='step-image'>
+          <img src='https://i.giphy.com/GAOOXrIDi7ev022LCg.webp' alt='Step 1 image' />
+          <audio controls autoplay style='display: none;'> <!-- Hide audio controls -->
+            <source src='${output}' type='audio/mp3' />
+          </audio>
+        </div>
+      </div>
+        `,
+        position: 'top'
+      },
+      
+    ]
+  });
+  setIntroInstance(intro);
+}, []);
+
+useEffect(()=>{
+
+},[])
 
   return (
     <div className="body-container bg-slate-200">
@@ -111,7 +144,7 @@ Our Expertise!
                   <h3 className="text-lg font-semibold">Register Your Email</h3>
                   <button
                     onClick={() => setIsModalOpen(false)}
-                    className="text-gray-500 hover:text-gray-700 focus:outline-none"
+                    className="text-gray-500 hover:text-gray-700 focus:outline-none step4"
                   >
                     <svg
                       className="w-6 h-6 fill-current"
@@ -133,7 +166,7 @@ Our Expertise!
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="block w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500"
+                      className="block w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500 steps4"
                       required
                     />
                   </label>

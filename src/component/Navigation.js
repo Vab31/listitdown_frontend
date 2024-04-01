@@ -1,34 +1,77 @@
 import React, { useState } from 'react'
-
+import 'intro.js/introjs.css';
+import introJs from 'intro.js';
+import { useEffect } from 'react';
+// import loder from '../loder.gif';
+import output from'./homev.mp3'
+import outputs from './studyv.mp3'
+import outputp from './prov.mp3'
 export default function Navigation() {
   const [fl , setFl]= useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [introInstance, setIntroInstance] = useState(null);
+
+  useEffect(() => {
+    const intro = introJs();
+    intro.setOptions({
+      steps: [
+        {
+          element: '.step1',
+          intro: `
+          <div class='step-content'>
+          <div class='step-image'>
+            <img src='https://i.giphy.com/GAOOXrIDi7ev022LCg.webp' alt='Step 1 image' />
+            <audio controls autoplay style='display: none;'> <!-- Hide audio controls -->
+              <source src='${output}' type='audio/mp3' />
+            </audio>
+          </div>
+        </div>
+          `,
+          position: 'top'
+        },
+        {
+          element: '.step2',
+          intro: `
+          <div class='step-content'>
+          <div class='step-image'>
+            <img src='https://i.giphy.com/VBEoqFlD71CgQGYiW5.webp' alt='Step 1 image' />
+            <audio controls autoplay style='display: none;'> <!-- Hide audio controls -->
+              <source src='${outputp}' type='audio/mp3' />
+            </audio>
+          </div>
+        </div>
+          `,
+          position: 'top'
+        },
+        {
+          element: '.step3',
+          intro: `
+          <div class='step-content'>
+          <div class='step-image'>
+            <img src='https://i.giphy.com/IsBh8jALIa0a7kHy33.webp' alt='Step 1 image' />
+            <audio controls autoplay style='display: none;'> <!-- Hide audio controls -->
+              <source src='${outputs}' type='audio/mp3' />
+            </audio>
+          </div>
+        </div>
+          `,
+          position: 'top'
+        },
+       
+        
+      ]
+    });
+    setIntroInstance(intro);
+  }, []);
+  
+
+ 
+
+ 
+
 
   return (
-//     <div>
-//         <header className="text-slate-900 font-semibold bg-slate-400 body-font">
-//   <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-//     <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href='/'>
-//       {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-//         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-//       </svg> */}
-//       <img src='https://see.fontimg.com/api/renderfont4/OVoWO/eyJyIjoiZnMiLCJoIjoyOSwidyI6MTAwMCwiZnMiOjI5LCJmZ2MiOiIjNEU1OUI5IiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/TGlzdGl0ZG93bg/aloevera.png' alt='listitdown'/>
-//       {/* <span className="ml-3 text-xl hover:cursor-pointer" >ListItDown</span> */}
-//     </a>
-//     <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-//       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/' >Home</a>
-//       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/showhackathon'>Hackathon</a>
-//       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href=''>Imp Hackathon </a>
-//       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/studymaterial'>Study Material</a>
-//       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/codelist'>Code Library</a>
-//     </nav>
-//     <button className="inline-flex items-center bg-sky-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded-md font-semibold mt-4 md:mt-0">Contact Us
-//       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-//         <path d="M5 12h14M12 5l7 7-7 7"></path>
-//       </svg>
-//     </button>
-//   </div>
-// </header>
-//     </div>
+
 <>
 <div className="bg-slate-400 md:flex flex-row h-20 hidden">
 <div className='justify-center my-auto md:ml-11 ml-2'>
@@ -36,13 +79,13 @@ export default function Navigation() {
 </div>
 <nav className = "md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/' >Home</a>
-      <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/showhackathon'>Hackathon</a>
-      <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href=''>Imp Hackathon </a>
-     <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/studymaterial'>Study Material</a>
-       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer" href='/codelist'>Code Library</a>
+      <a className="mr-5 hover:text-gray-900 hover:cursor-pointer  step1 " href='/showhackathon'>Hackathon</a>
+      <a className="mr-5 hover:text-gray-900 hover:cursor-pointer " href=''>Imp Hackathon </a>
+     <a className="mr-5 hover:text-gray-900 hover:cursor-pointer step2" href='/studymaterial'>Study Material</a>
+       <a className="mr-5 hover:text-gray-900 hover:cursor-pointer step3" href='/codelist'>Code Library</a>
     </nav>
     <div className=' justify-center my-auto mr-11 '>
-       <button className=" md:inline-flex hidden items-center bg-sky-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded-md font-semibold mt-4 md:mt-0">Contact Us
+       <button className=" md:inline-flex hidden items-center bg-sky-600 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded-md font-semibold mt-4 md:mt-0" onClick={()=>{introInstance.start();}}>Website Tour
       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg>
@@ -84,3 +127,5 @@ export default function Navigation() {
 </>
   )
 }
+
+
