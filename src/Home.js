@@ -14,7 +14,7 @@ export default function Home() {
   async function datafetch() {
     try {
       const response = await axios.get("https://listitdown-backend.vercel.app/list/display");
-      dispatch(addItem(response.data));
+      
       setData(response.data);
       // Move this line after dispatch
       console.log('data', data);

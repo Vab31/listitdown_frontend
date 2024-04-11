@@ -1,0 +1,33 @@
+.slider {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .cards {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .card {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card.active {
+    transform: translateY(-20px) rotateY(20deg);
+  }
+  
+  .card:not(.active) {
+    filter: brightness(0.7);
+  }
+  
