@@ -35,6 +35,15 @@ function Footer() {
         <li>
           <a href="/codelist">Code Library</a>
         </li>
+        <li>
+          <a href="/policy">Policy</a>
+        </li>
+        <li>
+          <a href="/cancel">Cancellation Policy</a>
+        </li>
+        <li>
+          <a href="/term">Code Library</a>
+        </li>
         {/* <li>
           <a href="#talktous">Talk to us</a>
         </li> */}

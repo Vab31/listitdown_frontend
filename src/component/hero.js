@@ -8,6 +8,7 @@ import axios from 'axios';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import 'intro.js/introjs.css';
+// import 'intro.js/introjs.css';
 import introJs from 'intro.js';
 import output from'./homev.mp3'
 

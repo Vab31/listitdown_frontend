@@ -16,6 +16,9 @@ import Sendmessage from './component/dashboard/sendmessage';
 import Codelist from './component/code/codelist';
 import Codepage from './component/code/codepage';
 import Addcode from './component/code/addcode';
+import Term from './component/termncondition/term';
+import Policy from './component/termncondition/Policy'
+import Cancellation from './component/termncondition/cancellation'
 // import 'flowbite/css/flowbite.min.css';
 
 import './font/style.css'
@@ -39,6 +42,9 @@ function App() {
           <Route path="/studymaterial" element={<Studymaterial />} />
           <Route path='/sendmessage' element={<Sendmessage/>}/>
           <Route path='/codelist' element={<Codelist/>}/>
+          <Route path='/term' element={<Term/>}/>
+          <Route path='/cancel' element={<Cancellation/>}/>
+          <Route path='/policy' element={<Policy/>}/>
           {/* <Route path='/side' element={<Dashsidebar/>}/> */}
           {/* <Route path='/codepage' element={<Codepage/>}/> */}
          

@@ -8,6 +8,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import crdbg from './crdbg.png';
 import loder from './loder.gif';
 import { flushSync } from 'react-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+
 
 function ShowHackathon() {
   const [value, setValue] = useState(null);
@@ -20,7 +23,8 @@ function ShowHackathon() {
   const yu = [
     { op: "In which year you are?", o1: "1 year", o2: "2 year", o3: "3 year", o4: "4 year" },
     { op: "Mode of Hackathon?", o1: "Online", o2: "Onsite"},
-    { op: "Prie", o1: "Paid", o2: "Free" }
+    { op: "Prie", o1: "Paid", o2: "Free" },
+    {op:null}
   ];
 
   const val = useSelector((state) => state.data.items);
@@ -95,76 +99,63 @@ function ShowHackathon() {
           <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">Unleash Your Potential: Collaborate, learn, and build something amazing.</p>
           <button onClick={() => setIsModalOpen(true)}>Open Modal</button>
         </div>
-
         {isModalOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
-    <div className="relative w-auto max-w-sm mx-auto my-6">
+    <div className="relative max-w-screen-md mx-auto my-6"> {/* Adjusted max-width */}
       <div className="bg-white rounded-lg shadow-lg">
         <div className="flex flex-col p-4">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold">Question</h3>
+            <h3 className="text-lg font-semibold w-56 text-center">Question</h3> {/* Fixed width for question box */}
             <button
               onClick={() => setIsModalOpen(false)}
               className="text-gray-500 hover:text-gray-700 focus:outline-none step4"
             >
-              Close Modal
+              <FontAwesomeIcon icon={faTimes} />
             </button>
           </div>
-          <h1>Slider</h1>
+         
           
-          <div className="slider relative overflow-hidden">
-            <div className="cards flex transition-transform duration-500 h-1/2">
-              {Array.from({ length: 3 }, (_, index) => (
+          <div className="slider relative overflow-hidden mx-auto ">
+            <div className="cards flex transition-transform duration-500 h-1/2 ">
+              {Array.from({ length: 4 }, (_, index) => (
                 <div
-                  className={`card p-8 m-4 h-1/2 flex-shrink-0 border border-gray-200 rounded-lg ${
+                  className={`card p-8  m-4 h-1/2 flex-shrink-0 border border-gray-200 rounded-lg ${
                     activeIndex === index ? 'active' : 'hidden'
                   }`}
                 >
                   <h3 className="text-xl font-semibold mb-2">{yu[index].op}</h3>
                   <p className="text-gray-600" onClick={()=>{
-         if (index===0) {
-          setOne(yu[index].o1)
-         } else if(index===1) {
-          setTwo(yu[index].o1)
-         } else{
-          setThree(yu[index].o1)
-         }
-  
-        }
-        }>{yu[index].o1}</p>
+                     if (index===0) {
+                      setOne(yu[index].o1)
+                     } else if(index===1) {
+                      setTwo(yu[index].o1)
+                     } else{
+                      setThree(yu[index].o1)
+                     }
+                  }}>{yu[index].o1}</p>
                   <p className="text-gray-600" onClick={()=>{
-         if (index===0) {
-          setOne(yu[index].o2)
-         } else if(index===1) {
-          setTwo(yu[index].o2)
-         } else{
-          setThree(yu[index].o2)
-         }
-  
-        }
-        }>{yu[index].o2}</p>
+                     if (index===0) {
+                      setOne(yu[index].o2)
+                     } else if(index===1) {
+                      setTwo(yu[index].o2)
+                     } else{
+                      setThree(yu[index].o2)
+                     }
+                  }}>{yu[index].o2}</p>
                   <p className="text-gray-600" onClick={()=>{
-         if (index===0) {
-          setOne(yu[index].o3)
-         } else if(index===1) {
-          setTwo(yu[index].o3)
-         } else{
-          setThree(yu[index].o3)
-         }
-  
-        }
-        }>{yu[index].o3}</p>
-                  <p className="text-gray-600" onClick={()=>{
-         if (index===0) {
-          setOne(yu[index].o4)
-         } else if(index===1) {
-          setTwo(yu[index].o4)
-         } else{
-          setThree(yu[index].o4)
-         }
-  
-        }
-        }>{yu[index].o4}</p>
+                     if (index===0) {
+                      setOne(yu[index].o3)
+                     } else if(index===1) {
+                      setTwo(yu[index].o3)
+                     } else{
+                      setThree(yu[index].o3)
+                     }
+                  }}>{yu[index].o3}</p>
+                 {index === 3 && ( 
+                    <button onClick={showresult} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                      Show Result
+                    </button>
+                  )}
                 </div>
               ))}
             </div>
@@ -174,12 +165,9 @@ function ShowHackathon() {
             <button className="next absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white py-2 px-4 rounded-r-md z-10" onClick={handleNext}>
               Next
             </button>
+            {/* Show Result button moved inside the modal */}
+            
           </div>
-        </div>
-        <div className="flex justify-end p-4">
-          <button onClick={showresult} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-            Show Result
-          </button>
         </div>
       </div>
     </div>
