@@ -8,6 +8,7 @@ import axios from 'axios';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import 'intro.js/introjs.css';
+// import 'intro.js/introjs.css';
 import introJs from 'intro.js';
 import output from'./homev.mp3'
 
@@ -133,56 +134,7 @@ Our Expertise!
         Get MERN Ebook
       </button>
 </a>
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
-          <div className="relative w-auto max-w-sm mx-auto my-6">
-            <div className="bg-white rounded-lg shadow-lg">
-              <div className="flex flex-col p-4">
-                {/* Modal header */}
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold">Register Your Email</h3>
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="text-gray-500 hover:text-gray-700 focus:outline-none step4"
-                  >
-                    <svg
-                      className="w-6 h-6 fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M17.293 2.293a1 1 0 0 1 1.414 1.414l-14 14a1 1 0 1 1-1.414-1.414l14-14zM2.707 2.293a1 1 0 0 1 0 1.414L16.707 18.707a1 1 0 1 1-1.414 1.414L1.293 3.707a1 1 0 0 1 1.414-1.414z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-                {/* Email input form */}
-                <form onSubmit={handleSubmit}>
-                  <label className="block mb-2">
-                    Email:
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="block w-full mt-1 p-2 border rounded-md focus:outline-none focus:border-blue-500 steps4"
-                      required
-                    />
-                  </label>
-                  <button
-                    type="submit"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 focus:outline-none focus:shadow-outline"
-                  >
-                    Submit
-                  </button>
-                  
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+    
     </div>
         
           </p>

@@ -173,8 +173,6 @@ const data = [
   
   
   ];
-  
-
 function Studymaterial() {
   const serviceContainerStyle = {
     display: "flex",
