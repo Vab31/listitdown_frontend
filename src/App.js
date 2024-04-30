@@ -19,6 +19,7 @@ import Addcode from './component/code/addcode';
 import Term from './component/termncondition/term';
 import Policy from './component/termncondition/Policy'
 import Cancellation from './component/termncondition/cancellation'
+import Coderecord from './component/code/coderecord';
 // import 'flowbite/css/flowbite.min.css';
 
 import './font/style.css'
@@ -46,7 +47,7 @@ function App() {
           <Route path='/cancel' element={<Cancellation/>}/>
           <Route path='/policy' element={<Policy/>}/>
           {/* <Route path='/side' element={<Dashsidebar/>}/> */}
-          {/* <Route path='/codepage' element={<Codepage/>}/> */}
+          <Route path='/codepage' element={<Codepage/>}/>
          
 
 
@@ -58,6 +59,8 @@ function App() {
               <Route path="/list" element={<Displaylist />} />
               <Route path="/additem" element={<Addlist />} />
               <Route path='/addcode' element={<Addcode/>}/>
+              <Route path='/coderecord' element={<Coderecord/>}/>
+
             </>
           ) : (
             <>

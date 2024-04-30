@@ -42,7 +42,7 @@ function Footer() {
           <a href="/cancel">Cancellation Policy</a>
         </li>
         <li>
-          <a href="/term">Code Library</a>
+          <a href="/term">Term</a>
         </li>
         {/* <li>
           <a href="#talktous">Talk to us</a>
@@ -61,7 +61,7 @@ function Footer() {
         </a>
       </div>
       <div className="footer__copyright">
-        <small>&copy; Listitdown powered by Rccodex  All rights reserved.</small>
+        <small>&copy; Listitdown powered by Rccodex and <a href='https://www.codeiox.in/'>Codeiox</a> All rights reserved.</small>
       </div>
     </footer>
   );

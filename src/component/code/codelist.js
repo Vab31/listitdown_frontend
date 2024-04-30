@@ -11,6 +11,7 @@ import loder from '../loder.gif'
 export default function Codelist() {
   const [value,setValue]=useState(null);
   const [res, setRes]=useState(true)
+  const [displayedItems, setDisplayedItems] = useState(6); 
     let val = useSelector((state)=>state.data.items)
   async function datafetch(){
 
@@ -57,8 +58,13 @@ export default function Codelist() {
     }
   };
 
+  const loadMoreItems = () => {
+    // Increase the number of displayed items by 7
+    setDisplayedItems(prev => prev + 3);
+  };
+
   return (
-    <div>
+    <div className='my-2'>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-16 mx-auto">
           <div className="flex flex-col text-center w-full mb-10">
@@ -119,7 +125,7 @@ export default function Codelist() {
             </div>
           ) : (
             <div className={results ? "flex flex-wrap mt-8" : "flex flex-wrap -m-2"}>
-              {value && value.map((val) => (
+                          {value.slice(0, displayedItems).map((val) =>  (
                 <div key={val._id} className="p-2 lg:w-1/3 md:w-1/2 w-full ">
                   <div className="h-full flex items-center bg-white border-gray-200 shadow-xl border p-4 rounded-lg">
                     <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-1" src={val.image}/>
@@ -133,9 +139,20 @@ export default function Codelist() {
                 </div>
               ))}
             </div>
+      
           )}
         </div>
       </section>
+      {displayedItems < value.length && (
+              <div className="flex justify-center">
+                <button
+                  onClick={loadMoreItems}
+                  className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none"
+                >
+                  Load More
+                </button>
+              </div>
+            )}
       
       {/* Conditional Rendering for Error */}
       {/* {error ? <div>Error Occurred...</div> : null} */}

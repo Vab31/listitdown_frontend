@@ -10,6 +10,8 @@ import Displaylist from './displaylist';
 import Addlist from './addList';
 import Addcode from '../code/addcode';
 import Sendmessage from './sendmessage';
+import Codelist from '../code/codelist';
+import Coderecord from '../code/coderecord';
 
 export default function Dashsidebar() {
   const [fl,setFl]= useState('default');
@@ -66,7 +68,7 @@ export default function Dashsidebar() {
     <Displaylist/>:""}
 
    {fl=='prolist'?  
-    <h1>jie</h1>:""}
+    <Coderecord/>:""}
     
    {fl=='hackadd'?  
     <Addlist/>:""}
