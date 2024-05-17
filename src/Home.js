@@ -30,11 +30,7 @@ export default function Home() {
 
   const val = useSelector((state) => state.data.items);
 
-  // useEffect(() => {
-  //   // setData(val); // Remove this line
-  //   // window.location.reload();
-  //   console.log('data', data); // Use 'val' directly
-  // }, [val]);
+  
 
 
   return (

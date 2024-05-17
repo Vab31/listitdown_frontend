@@ -1,0 +1,27 @@
+.card {
+    width: 300px; /* Adjust width as needed */
+    transition: all 0.3s ease;
+  }
+  
+  .card.active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow when card is active */
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .option {
+    padding: 8px;
+    border-radius: 6px;
+    background-color: #f3f4f6;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .option:hover {
+    background-color: #e5e7eb; /* Change background color on hover */
+  }
+  

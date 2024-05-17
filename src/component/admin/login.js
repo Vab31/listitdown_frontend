@@ -57,8 +57,8 @@ const logincheck= async()=>{
     <section className="text-gray-600 body-font md:mt-10  ">
   <div className="container px-5 py-24 mx-auto flex flex-wrap bg-gray-300 items-center">
     <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0 ">
-      <h1 className="title-font font-medium text-3xl text-gray-900">Slow-carb next level shoindcgoitch ethical authentic, poko scenester</h1>
-      <p className="leading-relaxed mt-4">Poke slow-carb mixtape knausgaard, typewriter street art gentrify hammock starladder roathse. Craies vegan tousled etsy austin.</p>
+      <h1 className="title-font font-medium text-3xl text-gray-900">LOGIN PAGE</h1>
+      <p className="leading-relaxed mt-4">Only Admin and Super Admin are allowed to access this side!</p>
     </div>
     <div className="lg:w-2/6 md:w-1/2 bg-gray-400 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
       <h2 className="text-gray-900 font-bold text-2xl title-font mb-5">Login</h2>

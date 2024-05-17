@@ -10,10 +10,43 @@ import Displaylist from './displaylist';
 import Addlist from './addList';
 import Addcode from '../code/addcode';
 import Sendmessage from './sendmessage';
-import Codelist from '../code/codelist';
 import Coderecord from '../code/coderecord';
+import Userlist from './userdisplay';
+import Prolist from './prolist';
+import { useNavigate } from 'react-router-dom';
 
 export default function Dashsidebar() {
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      // Optionally, notify the backend to handle any server-side logout logic
+      // const response = await fetch('/api/logout', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     'Authorization': `Bearer ${localStorage.getItem('token')}`
+      //   }
+      // });
+      // if (!response.ok) {
+      //   throw new Error('Logout failed');
+      // }
+
+      // Remove the token from localStorage
+      localStorage.removeItem('token');
+      console.log("success")
+
+      // Optionally, clear all localStorage items (if you have other data stored)
+      // localStorage.clear();
+
+      // Redirect to the login page or another appropriate location
+      navigate("/adminlogin");
+      window.location.reload()
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Logout failed');
+    }
+  };
   const [fl,setFl]= useState('default');
   console.log('fl', fl)
   return (
@@ -37,7 +70,7 @@ export default function Dashsidebar() {
           <CiViewList className='w-6 h-6 mr-3' />
           <h1 className='truncate'>Hackathon List</h1>
         </div>
-        <div className='mx-2 flex items-center  rounded px-5 py-2 cursor-pointer font-semibold hover:bg-slate-400 my-6'>
+        <div className={fl=='userlist'?'mx-2 flex items-center w-5/6 rounded px-5 py-2 cursor-pointer font-semibold hover:bg-slate-400 my-6 bg-slate-200':'mx-2 flex items-center w-5/6 rounded px-5 py-2 cursor-pointer font-semibold hover:bg-slate-400 my-6'} onClick={()=>setFl('userlist')}>
           <FaUserAstronaut className='w-6 h-6 mr-3' />
           <h1 className='truncate'>User</h1>
         </div>
@@ -54,6 +87,13 @@ export default function Dashsidebar() {
           <MdFormatListBulletedAdd className='w-6 h-6 mr-3' />
           <h1 className='truncate'>Send Message</h1>
         </div>
+
+        <button
+      onClick={handleLogout}
+      className="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75"
+    >
+      Logout
+    </button>
       </div>
     </div>
     </div>
@@ -67,8 +107,8 @@ export default function Dashsidebar() {
    {fl=='hacklist'?  
     <Displaylist/>:""}
 
-   {fl=='prolist'?  
-    <Coderecord/>:""}
+   {/* {fl=='prolist'?  
+    <Coderecord/>:""} */}
     
    {fl=='hackadd'?  
     <Addlist/>:""}
@@ -78,6 +118,12 @@ export default function Dashsidebar() {
 
    {fl=='sendmess'?  
     <Sendmessage/>:""}
+
+   {fl=='userlist'?  
+    <Userlist/>:""}
+
+   {fl=='prolist'?  
+    <Prolist/>:""}
    {/* {fl=='hackadd'?  
     <h1>list down</h1>:""} */}
 

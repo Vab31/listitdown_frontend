@@ -5,20 +5,21 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   items:[],
 };
-
 const storeSlice = createSlice({
   name: 'data',
   initialState,
   reducers: {
     addItem: (state, action) => {
-      state.items=action.payload;
-      console.log('items',state.items);
+      state.items = action.payload;
+      console.log('items', state.items);
     },
     removeItem: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload.id);
+      const itemId = action.payload;
+      state.items = state.items.filter((item) => item._id !== itemId);
     },
   },
 });
+
 
 export const { addItem, removeItem } = storeSlice.actions;
 export default storeSlice.reducer;

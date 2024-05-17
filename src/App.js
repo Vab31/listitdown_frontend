@@ -20,6 +20,7 @@ import Term from './component/termncondition/term';
 import Policy from './component/termncondition/Policy'
 import Cancellation from './component/termncondition/cancellation'
 import Coderecord from './component/code/coderecord';
+import Logout from './component/admin/logout';
 // import 'flowbite/css/flowbite.min.css';
 
 import './font/style.css'
@@ -60,6 +61,7 @@ function App() {
               <Route path="/additem" element={<Addlist />} />
               <Route path='/addcode' element={<Addcode/>}/>
               <Route path='/coderecord' element={<Coderecord/>}/>
+              <Route path='/logout' element={<Logout/>}/>
 
             </>
           ) : (
